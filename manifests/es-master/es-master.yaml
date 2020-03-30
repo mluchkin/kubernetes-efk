@@ -33,7 +33,7 @@ spec:
             add:
               - IPC_LOCK
               - SYS_RESOURCE
-        image: quay.io/pires/docker-elasticsearch-kubernetes:5.5.2
+        image: elasticsearch:7.6.1
         imagePullPolicy: Always
         env:
         - name: "NETWORK_HOST"
@@ -62,7 +62,7 @@ spec:
           value: "-Xms##MEMORY_USAGE_MASTER## -Xmx##MEMORY_USAGE_MASTER##"
         resources:
           requests:
-            memory: ##MEMORY_USAGE_MASTER_REQUESTS##
+            memory: "512Mi"
         ports:
         - containerPort: 9300
           name: transport

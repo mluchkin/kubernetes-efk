@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "${NAMESPACE}" ]; then
-    NAMESPACE=kube-logging
+    NAMESPACE=logging
 fi
 
 kubectl create namespace "$NAMESPACE"

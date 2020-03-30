@@ -33,7 +33,7 @@ spec:
           capabilities:
             add:
               - IPC_LOCK
-        image: zuzzas/docker-elasticsearch-kubernetes:5.5.2
+        image: elasticsearch:7.6.1
         imagePullPolicy: Always
         env:
         - name: "NETWORK_HOST"
@@ -64,7 +64,7 @@ spec:
           value: "1000"
         resources:
           requests:
-            memory: ##MEMORY_USAGE_DATA_REQUESTS##
+            memory: "512Mi"
         ports:
         - containerPort: 9300
           name: transport

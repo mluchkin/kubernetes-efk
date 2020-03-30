@@ -357,6 +357,6 @@ data:
     </match>
 metadata:
   name: fluentd-es-config-v0.1.0
-  namespace: kube-logging
+  namespace: logging
   labels:
     addonmanager.kubernetes.io/mode: Reconcile

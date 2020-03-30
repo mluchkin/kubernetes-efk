@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: kibana-logging
-  namespace: kube-logging
+  namespace: logging
   labels:
     k8s-app: kibana-logging
     kubernetes.io/cluster-service: "true"
@@ -19,13 +19,13 @@ spec:
     spec:
       containers:
       - name: kibana-logging
-        image: zuzzas/kibana-xpackless:5.5.2
-        #resources:
-        #  # need more cpu upon initialization, therefore burstable class
-        #  limits:
-        #    cpu: 1000m
-        #  requests:
-        #    cpu: 100m
+        image: kibana:7.6.1
+        resources:
+         # need more cpu upon initialization, therefore burstable class
+         limits:
+           cpu: 1000m
+         requests:
+           cpu: 100m
         env:
           - name: "CLUSTER_NAME"
             value: "myesdb"
